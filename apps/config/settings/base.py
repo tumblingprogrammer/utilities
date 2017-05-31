@@ -1,6 +1,8 @@
 import os
+from manage import get_env_variable
+DJANGO_SECRET_KEY = get_env_variable('DJANGO_SECRET_KEY')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = 'ew9vz)1fm2vwhca^2lq5d-g0+g_27!pih!z6(97=@vb7vip-!n'
+SECRET_KEY = DJANGO_SECRET_KEY
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
