@@ -8,3 +8,5 @@ six==1.10.0
 
 django-bootstrap3==8.2.3
 
+django-environ==0.4.3
+
