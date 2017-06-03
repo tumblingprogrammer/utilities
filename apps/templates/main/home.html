@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
 {% load fontawesome %}
+{% load staticfiles %}
 
 {% block title %} Home
 {% endblock %}
@@ -31,6 +32,18 @@
         (i.e., it is greyish),
         Bootstrap works!</span></p>
     <p class="centered-text">If you can see a user icon {% fontawesome_icon 'user' %} here, font awesome works!</p>
+
+    <hr>
+    <div class="container-fluid">
+        <p>Our media server works if you can successfully see twitter's logo here:
+            <a href="https://twitter.com/tumblingprgrmmr" title="tumbling programmer's twitter account">
+                <img src="{{ MEDIA_URL }}twitter48.png" alt="twitter logo"></a>
+        </p>
+        <p>Static-serving files works too if you can successfully see twitter's logo here:
+            <a href="https://twitter.com/tumblingprgrmmr" title="tumbling programmer's twitter account">
+                <img src="{% static 'img/twitter48.png'%}" alt="twitter logo"></a>
+        </p>
+    </div>
 
 {% endblock %}
 
