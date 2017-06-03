@@ -1,1 +1,6 @@
 -r base.txt
+
+django-livereload-server==0.2.3
+beautifulsoup4==4.6.0
+tornado==4.5.1
+
