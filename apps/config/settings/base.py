@@ -24,6 +24,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'bootstrap3',
+    'fontawesome',
 ]
 LOCAL_APPS = [
     'main',

@@ -1,6 +1,7 @@
 {% extends 'bootstrap3/bootstrap3.html' %}
 {% load bootstrap3 %}
 {% load staticfiles %}
+{% load fontawesome %}
 
 {% block bootstrap3_title %}
     {% block title %}
@@ -9,6 +10,7 @@
 
 {% block bootstrap3_extra_head %}
     <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+    {% fontawesome_stylesheet %}
     {% bootstrap_javascript %}
     {% block head %}
     {% endblock %}
@@ -24,4 +26,3 @@
     {% block scripts %}
     {% endblock %}
 {% endblock %}
-
