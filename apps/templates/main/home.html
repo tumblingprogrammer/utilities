@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>djangoboilerplate</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block title %} Home
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block content %}
 
     <div class="jumbotron centered-text">
         <h1>Hello djangonaut!</h1>
@@ -14,6 +18,7 @@
     <p class="centered-text"><span class="text-muted">This is a bootstrapped text - if different from the one above (i.e., it is greyish),
         Bootstrap works!</span></p>
 
+{% endblock %}
 
-</body>
-</html>
+{% block scripts %}
+{% endblock %}
