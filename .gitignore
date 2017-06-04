@@ -144,7 +144,7 @@ fabric.properties
 *.pdf
 
 # image files
-*.png
+# *.png
 *.jpg
 .DS_Store
 
