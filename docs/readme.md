@@ -1,4 +1,4 @@
-To learn more about this project, please visit its page on [tumblingprogrammer.com](http://www.tumblingprogrammer.com/setting-up-a-django-project-boilerplate/).
+To learn more about this project, please visit its page on [tumblingprogrammer.com](http://www.tumblingprogrammer.com/setting-up-a-django-project-boilerplate/)
 
 While there, make sure to visit the [conventions page](http://www.tumblingprogrammer.com/conventions-used-on-tumbling-programmer-dot-com/), some of which apply to the instructions below.
 
