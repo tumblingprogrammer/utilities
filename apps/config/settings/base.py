@@ -74,7 +74,9 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
 
+# Registration
 REGISTRATION_OPEN = True
+LOGIN_REDIRECT_URL = "/" #if not set, user is sent to user's profile page
 
 # Bootstrap settings
 BOOTSTRAP3 = {
