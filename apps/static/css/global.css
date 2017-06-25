@@ -165,3 +165,32 @@ a:hover {
 
 }
 
+.slugify-results {
+	border: #FF9B2D thick solid;
+	padding: 1rem;
+}
+
+.button-div {
+	margin-top: 1rem !important;
+}
+
+.inline {
+	display: inline;
+}
+
+.button-bar-div {
+	padding: 1rem;
+}
+
+.wrapper-div {
+	text-align: center;
+}
+
+.centered-div {
+	display: inline-block;
+}
+
+.editable-box {
+	border: none;
+}
+

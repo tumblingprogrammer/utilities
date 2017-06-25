@@ -9,5 +9,9 @@ def profile(request):
     return render(request, 'main/profile.html', context=None)
 
 
+def slugifier(request):
+    return render(request, 'main/slugifier.html', context=None)
+
+
 
 
