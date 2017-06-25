@@ -6,7 +6,7 @@ Let's dive in.
 
 #### Creating a virtual environment
 _____
-Let's create a virtual environment, preferably using [virtual environment wrapper]() (you could use a different virtual environment option too); for illustration purposes, let's call it `djangoboilerplate`.  Make sure that it is based on python 3.5 or later.
+Let's create a virtual environment, preferably using [virtual environment wrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) (you could use a different virtual environment option too); for illustration purposes, let's call it `djangoboilerplate`.  Make sure that it is based on python 3.5 or later.
 
 #### Cloning the repository
 
@@ -85,7 +85,7 @@ To verify that setting the environment variables worked, make sure to run `echo 
 
 #### Testing the boilerplate
 _____
-Once your variables are set, on your terminal navigate to `djangoboilerplate/apps/` and once there, run `manage.py runserver`. You should be able to see the below screen if you point your browser to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).   
+Once your variables are set, on your terminal navigate to `djangoboilerplate/apps/` and once there, run `manage.py runserver`. You should be able to see the below screen if you point your browser to `http://127.0.0.1:8000/`.   
 
 From this point on, the sky is the limit :)
 
