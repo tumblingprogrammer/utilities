@@ -194,3 +194,12 @@ a:hover {
 	border: none;
 }
 
+.wrapper-div {
+    max-width: 300px;
+    margin: auto;
+}
+
+#message-div {
+    display: none;
+}
+

@@ -23,5 +23,9 @@ def django_secret_key_generator(request):
     return render(request, 'main/django-secret-key-generator.html', context=context)
 
 
+def about_tumbling_utilities(request):
+    return render(request, 'main/about-tumbling-utilities.html', context=None)
+
+
 
 
