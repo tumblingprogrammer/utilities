@@ -1,4 +1,167 @@
 /* global css code goes here */
+
+
+/* project-wide CSS code goes here */
+* {
+    /*border: #919191 thin solid;*/
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2rem;
+}
+
+.entry-link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: #ff9b2d underline solid;
+}
+
+.top-content-container {
+    margin-top: 100px !important;
+}
+
 .centered-text {
     text-align: center;
 }
+
+.jumbotron {
+    margin-top: 66px;
+}
+
+#id_body {
+    width: 600px !important;
+    height: 800px !important;
+}
+
+.blog-entry {
+    margin-top: 3rem;
+    background-color: #f3f3f3;
+    padding: 1rem;
+
+}
+
+/*.blog-entry-title {*/
+/*border-bottom: #ff9b2d thin solid;*/
+/*}*/
+
+.article-body {
+    /*margin-top: 2rem;*/
+}
+
+.article-body > p > img {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.article-body > p > img {
+    display: block;
+    /*margin-left: 3rem;*/
+}
+
+.inset-div {
+    margin-top: 3rem;
+    border: #ff9b2d thin dotted;
+}
+
+.inset-header {
+    background-color: #ff9b2d;
+    color: white;
+}
+
+.inset-div-contents {
+    padding: 1.5rem;
+}
+
+.article-body, .article-title, .article-footer {
+    border: #f3f3f3 thin solid;
+    padding: 2rem;
+}
+
+.article-title, .article-footer {
+    background-color: #f3f3f3;
+}
+
+.social-media-icon {
+    font-size: 4rem;
+}
+
+.footer-text {
+    margin-top: 1.8rem;
+}
+
+.transparent {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.transparent:hover {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 1;
+}
+
+.vertical_separator, .tag-link {
+    margin: 0 1rem 0 1rem;
+}
+
+.tag-link {
+    margin: 0 0.3rem 0 0.3rem;
+}
+
+.home-header-pane-container {
+    padding: 3rem;
+}
+.home-header-pane {
+    background-color: rgba(69, 130, 236, 0.1);
+    border-left: 15px solid #ff9b2d;
+    padding: 1rem;
+}
+
+.home-header-text {
+    font-style: italic;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#email-field {
+    margin: 0rem 1rem;
+}
+
+
+.registration-div {
+
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border: #919191 thin solid;
+    margin-top: 3rem;
+    padding: 3rem
+
+}
+

@@ -2,14 +2,21 @@
 {% load bootstrap3 %}
 {% load i18n %}
 
-{% block content %}
-    <div style="max-width: 400px; margin-left: auto; margin-right: auto; border: #919191 thin solid; margin-top: 3rem; padding: 3rem">
-        <form method="post" action=".">
-            {% csrf_token %}
-            {% bootstrap_form form %}
+{% block title %} Register an account
+{% endblock %}
 
-            <input type="submit" value="{% trans 'Submit' %}"/>
-        </form>
+{% block content %}
+
+    <div class="container top-content-container">
+        <h3 class="centered-text">Account registration</h3>
+        <div class="registration-div">
+            <form method="post" action=".">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+
+                <input type="submit" value="{% trans 'Submit' %}"/>
+            </form>
+        </div>
     </div>
 {% endblock %}
 

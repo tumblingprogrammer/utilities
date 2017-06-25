@@ -5,10 +5,11 @@
 
 {% block bootstrap3_title %}
     {% block title %}
-    {% endblock %} - django boilerplate App
+    {% endblock %} - tumbling utilities
 {% endblock %}
 
 {% block bootstrap3_extra_head %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
     {% fontawesome_stylesheet %}
     {% bootstrap_javascript %}
@@ -17,8 +18,55 @@
 {% endblock %}
 
 {% block bootstrap3_content %}
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="/"><span class="">tumbling utilities</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">{% bootstrap_icon "home" %}</a></li>
+                    <li><a href="#">About</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'auth_logout' %}">Log out {% bootstrap_icon "log-out" %}</a></li>
+                        <li><a href="{% url 'profile' %}">Profile {% bootstrap_icon "user" %}</a></li>
+                        {% if request.user.is_superuser %}
+                            <li><a href="/admin/">Admin {% bootstrap_icon "tasks" %}</a></li>
+                        {% endif %}
+                    {% else %}
+                        <li><a href="{% url 'auth_login' %}">Log in {% fontawesome_icon 'sign-in' %}</a></li>
+                        <li class="sign-up__btn"><a href="{% url 'registration_register' %}">Sign up for free</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     {% block content %}
     {% endblock %}
+
+    <div style="min-height: 3rem;" id="divider"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="centered-text small footer-text">
+                <a href="#">about</a><span class="vertical_separator">|</span>Let's
+                connect:
+                <a href="https://twitter.com/tumblingprgrmmr"><img width="32" height="32" class=""
+                                                                   src="{% static 'img/twitter48.png' %}"></a>
+                <a href="https://github.com/tumblingprogrammer"><img width="32" height="32" class=""
+                                                                     src="{% static 'img/github48.png' %}"></a>
+            </p>
+        </div>
+    </footer>
+
 {% endblock %}
 
 {% block bootstrap3_extra_script %}
@@ -26,3 +74,8 @@
     {% block scripts %}
     {% endblock %}
 {% endblock %}
+
+
+
+
+
