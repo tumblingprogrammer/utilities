@@ -105,7 +105,7 @@
         new Clipboard('.btn'); // instantiation of clipboard.js
 
         var $text_to_slugify = $('#text-to-slugify');
-        var slugified_text = $('#slugified-text');
+        var $slugified_text = $('#slugified-text');
 
         var text_to_slugify = $text_to_slugify.value;
 
@@ -119,20 +119,20 @@
         }
 
         function construct_strings() {
-            slugified_text = $('#prefix-to-slugified-text').val() + slugify($('#text-to-slugify').val()) + $('#suffix-to-slugified-text').val();
-            $('#slugified-text').text(slugified_text);
+            slugified_text = $('#prefix-to-slugified-text').val() + slugify($text_to_slugify.val()) + $('#suffix-to-slugified-text').val();
+            $slugified_text.text(slugified_text);
 
             $('.markdown-link-prefix-to-the-link-constructor').text($('#prefix-to-the-link-constructor').val());
-            $('.markdown-link-text-to-slugify').text($('#text-to-slugify').val());
+            $('.markdown-link-text-to-slugify').text($text_to_slugify.val());
 
             $('#markdown-link-location-of-the-file').text($('#location-of-the-file').val());
-            $('#markdown-link-slugified-file-name').text($('#slugified-text').text());
+            $('#markdown-link-slugified-file-name').text($slugified_text.text());
         }
 
         function clear_slugify_fields() {
             $('#prefix-to-slugified-text').val("");
             $('#suffix-to-slugified-text').val("");
-            $('#text-to-slugify').val("");
+            $text_to_slugify.val("");
         }
 
         $('#clear-slugifier-fields').on('click', function () {
