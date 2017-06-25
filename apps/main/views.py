@@ -3,7 +3,9 @@ import random
 
 
 def home(request):
-    return render(request, 'main/home.html', context=None)
+    context={}
+    context['meta_content'] = "Collection of utilities helpful for web developers who use django, python, javascript, css and other web technologies."
+    return render(request, 'main/home.html', context=context)
 
 
 def profile(request):
@@ -11,11 +13,14 @@ def profile(request):
 
 
 def slugifier(request):
-    return render(request, 'main/slugifier.html', context=None)
+    context={}
+    context['meta_content'] = "App to slugify text, as well as help with the construction of markdown links."
+    return render(request, 'main/slugifier.html', context=context)
 
 
 def django_secret_key_generator(request):
     context = {}
+    context['meta_content'] = "App to generate django secret keys."
     django_secret_key = ''
     for i in range(50):
         django_secret_key += random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
