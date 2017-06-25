@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block content %}
+    <div style="max-width: 400px; margin-left: auto; margin-right: auto; border: #919191 thin solid; margin-top: 3rem; padding: 3rem">
+        <form method="post" action="." style="padding: 3rem !important;">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <input type="submit" value="{% trans 'Log in' %}"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+        </form>
+
+        <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+        <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+    </div>
+{% endblock %}

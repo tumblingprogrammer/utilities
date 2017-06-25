@@ -16,6 +16,7 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 
 DJANGO_APPS = [
     'django.contrib.admin',
+    'registration', # Normally this go under THIRD_PARTY_APPS but it needs to be above 'django.contrib.auth'
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -72,6 +73,8 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
+
+REGISTRATION_OPEN = True
 
 # Bootstrap settings
 BOOTSTRAP3 = {

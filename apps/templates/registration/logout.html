@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+    <div style="margin-top: 3rem; padding: 3rem">
+        <p>{% trans "Logged out" %}</p>
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+{% endblock %}
