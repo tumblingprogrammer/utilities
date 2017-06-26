@@ -22,21 +22,24 @@
         <div class="slugify-container row">
 
             <div class="col-sm-6">
+                <p>Text to be slugified<input type="text" class="form-control"
+                                              name="text_to_slugify" id="text-to-slugify"></p>
 
-                <p>Enter the text that you want to slugify : <input type="text" class="form-control"
-                                                                    name="text_to_slugify" id="text-to-slugify"></p>
+                <p><span class="highlight">Optional</span> Prefix to the slugified text<input type="text"
+                                                                                              class="form-control"
+                                                                                              name="prefix_to_slugified_text"
+                                                                                              id="prefix-to-slugified-text">
+                </p>
 
-                <p>Any prefix to the slugified text? : <input type="text" class="form-control"
-                                                              name="prefix_to_slugified_text"
-                                                              id="prefix-to-slugified-text"></p>
-
-                <p>Any suffix to the slugified text? : <input type="text" class="form-control"
-                                                              name="suffix_to_slugified_text"
-                                                              id="suffix-to-slugified-text"></p>
+                <p><span class="highlight">Optional</span> Suffix to the slugified text<input type="text"
+                                                                                              class="form-control"
+                                                                                              name="suffix_to_slugified_text"
+                                                                                              id="suffix-to-slugified-text">
+                </p>
 
                 <p>Slugified text</p>
                 <div class="slugify-results">
-                    <span id="slugified-text">[placeholder for slugified text]</span>
+                    <span id="slugified-text" class="dimmed-text">the slugified text will show here</span>
                 </div>
                 <div class="button-bar-div">
                     <div class="button-div inline"><input id="copy-to-clipboard-btn" class="btn btn-primary"
@@ -48,28 +51,28 @@
             </div>
 
             <div class="col-sm-6">
+                <h4><span class="highlight">Optional</span> Markdown image link constructor</h4>
+                <p>Prefix<input type="text" class="form-control"
+                                name="prefix_to_the_link_constructor"
+                                id="prefix-to-the-link-constructor"></p>
 
-                <p>Prefix to the link constructor : <input type="text" class="form-control"
-                                                           name="prefix_to_the_link_constructor"
-                                                           id="prefix-to-the-link-constructor"></p>
-
-                <p>Location of the file : <input type="text" class="form-control" name="location_of_the_file"
-                                                 id="location-of-the-file"></p>
+                <p>File location<input type="text" class="form-control" name="location_of_the_file"
+                                       id="location-of-the-file"></p>
 
                 <p>Constructed markdown link</p>
                 <div class="slugify-results">
-                <span id="markdown-link"><!--
-                --><span class="markdown-link-fixed-text">![</span>
-                <span class="markdown-link-prefix-to-the-link-constructor">...prefix to the link constructor...</span>
-                <span class="markdown-link-text-to-slugify">...text to slugify...</span>
-                <span class="markdown-link-fixed-text">](</span>
-                    <span id="markdown-link-location-of-the-file">... file location ...</span><!--
-                --><span id="markdown-link-slugified-file-name">... slugified file name ...</span>
-                <span class="markdown-link-fixed-text">"</span>
-                <span class="markdown-link-prefix-to-the-link-constructor">...prefix to the link constructor...</span>
-                <span class="markdown-link-text-to-slugify">...text to slugify...</span>
-                <span class="markdown-link-fixed-text">")</span>
-            </span>
+                <span id="markdown-link" class="dimmed-text"><!--
+                    --><span class="markdown-link-fixed-text">![</span>
+                    <span class="markdown-link-prefix-to-the-link-constructor">...prefix to the image link constructor...</span>
+                    <span class="markdown-link-text-to-slugify">...text to be slugified...</span>
+                    <span class="markdown-link-fixed-text">](</span>
+                        <span id="markdown-link-location-of-the-file">... file location ...</span><!--
+                    --><span id="markdown-link-slugified-file-name">... slugified file name ...</span>
+                    <span class="markdown-link-fixed-text">"</span>
+                    <span class="markdown-link-prefix-to-the-link-constructor">...prefix to the link constructor...</span>
+                    <span class="markdown-link-text-to-slugify">...text to slugify...</span>
+                    <span class="markdown-link-fixed-text">")</span>
+                </span>
                 </div>
                 <div class="button-bar-div">
                     <div class="button-div inline"><input id="copy-to-clipboard-btn" class="btn btn-primary"
@@ -88,8 +91,8 @@
 
         <div class="button-div button inline"><input id="clear-all-fields" class="btn btn-primary" type="button"
                                                      value="clear all fields"></div>
-        <div class="button-div button inline"><input id="save-to-database" class="btn btn-primary" type="button"
-                                                     value="save to database"></div>
+        {#        <div class="button-div button inline"><input id="save-to-database" class="btn btn-primary" type="button"#}
+        {#                                                     value="save to database"></div>#}
 
 
     </div>
@@ -119,8 +122,17 @@
         }
 
         function construct_strings() {
-            slugified_text = $('#prefix-to-slugified-text').val() + slugify($text_to_slugify.val()) + $('#suffix-to-slugified-text').val();
-            $slugified_text.text(slugified_text);
+            $('#markdown-link').removeClass('dimmed-text');
+            var slugified_text = $('#prefix-to-slugified-text').val() + slugify($text_to_slugify.val()) +
+                $('#suffix-to-slugified-text').val();
+            if (slugified_text === '') {
+                $slugified_text.text('the slugified text will show here');
+            }
+            else {
+                $slugified_text.removeClass('dimmed-text');
+                $slugified_text.text(slugified_text);
+            }
+
 
             $('.markdown-link-prefix-to-the-link-constructor').text($('#prefix-to-the-link-constructor').val());
             $('.markdown-link-text-to-slugify').text($text_to_slugify.val());
@@ -133,33 +145,49 @@
             $('#prefix-to-slugified-text').val("");
             $('#suffix-to-slugified-text').val("");
             $text_to_slugify.val("");
+            $slugified_text.addClass('dimmed-text');
+            $slugified_text.text('the slugified text will show here');
         }
 
-        $('#clear-slugifier-fields').on('click', function () {
+        function clear_markdown_image_link_constructor_fields() {
+            $('#prefix-to-the-link-constructor').val("");
+            $('#location-of-the-file').val("");
+            $('#markdown-link').addClass('dimmed-text');
+        }
+
+        $(document).on('click', '#clear-slugifier-fields', function () {
             clear_slugify_fields();
         });
 
+        $(document).on('click', '#clear-markdown-link-fields', function () {
+            clear_markdown_image_link_constructor_fields();
+        });
 
-        $text_to_slugify.on('input', function () {
+        $(document).on('click', '#clear-all-fields', function () {
+            clear_slugify_fields();
+            clear_markdown_image_link_constructor_fields();
+        });
+
+
+        $(document).on('input', $text_to_slugify, function () {
             construct_strings();
         });
 
-        $('#prefix-to-slugified-text').on('input', function () {
+        $(document).on('input', '#prefix-to-slugified-text', function () {
             construct_strings();
         });
 
-        $('#suffix-to-slugified-text').on('input', function () {
+        $(document).on('input', '#suffix-to-slugified-text', function () {
             construct_strings();
         });
 
-        $('#prefix-to-the-link-constructor').on('input', function () {
+        $(document).on('input', '#prefix-to-the-link-constructor', function () {
             construct_strings();
         });
 
-        $('#location-of-the-file').on('input', function () {
+        $(document).on('input', '#location-of-the-file', function () {
             construct_strings();
         });
-
 
     </script>
 

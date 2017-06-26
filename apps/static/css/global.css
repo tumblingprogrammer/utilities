@@ -203,3 +203,14 @@ a:hover {
     display: none;
 }
 
+.highlight {
+    background-color: #ff9b2d;
+    padding: 0 1rem;
+    color: white;
+
+}
+
+.dimmed-text {
+    color: #dedede;
+}
+

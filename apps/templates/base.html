@@ -35,14 +35,14 @@
                     <li><a href="/">{% bootstrap_icon "home" %}</a></li>
                     <li><a href="{% url 'about_tumbling_utilities' %}">About</a></li>
                     {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'auth_logout' %}">Log out {% bootstrap_icon "log-out" %}</a></li>
-                        <li><a href="{% url 'profile' %}">Profile {% bootstrap_icon "user" %}</a></li>
+{#                        <li><a href="{% url 'auth_logout' %}">Log out {% bootstrap_icon "log-out" %}</a></li>#}
+{#                        <li><a href="{% url 'profile' %}">Profile {% bootstrap_icon "user" %}</a></li>#}
                         {% if request.user.is_superuser %}
                             <li><a href="/admin/">Admin {% bootstrap_icon "tasks" %}</a></li>
                         {% endif %}
                     {% else %}
-                        <li><a href="{% url 'auth_login' %}">Log in {% fontawesome_icon 'sign-in' %}</a></li>
-                        <li class="sign-up__btn"><a href="{% url 'registration_register' %}">Sign up for free</a></li>
+{#                        <li><a href="{% url 'auth_login' %}">Log in {% fontawesome_icon 'sign-in' %}</a></li>#}
+{#                        <li class="sign-up__btn"><a href="{% url 'registration_register' %}">Sign up for free</a></li>#}
                     {% endif %}
                 </ul>
             </div>
