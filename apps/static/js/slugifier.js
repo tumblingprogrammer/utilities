@@ -1,4 +1,4 @@
-new Clipboard('.btn'); // instantiation of clipboard.js
+var clipboard = new Clipboard('.btn'); // instantiation of clipboard.js
 
 var $text_to_slugify = $('#text-to-slugify');
 var $slugified_text = $('#slugified-text');
@@ -81,3 +81,8 @@ $(document).on('input', '#prefix-to-the-link-constructor', function () {
 $(document).on('input', '#location-of-the-file', function () {
     construct_strings();
 });
+
+
+
+
+
