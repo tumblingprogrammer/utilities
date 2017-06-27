@@ -14,7 +14,7 @@ def profile(request):
 
 def slugifier(request):
     context={}
-    context['meta_content'] = "App to slugify text, as well as help with the construction of markdown links."
+    context['meta_content'] = "App to slugify text, as well as help with the construction of image markdown links."
     return render(request, 'main/slugifier.html', context=context)
 
 
